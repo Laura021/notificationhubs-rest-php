@@ -2,10 +2,10 @@
 
 namespace Seis10\NotificationHubsRest\Notification\Tests;
 
-use Openpp\NotificationHubsRest\Notification\AppleNotification;
-use Openpp\NotificationHubsRest\Notification\GcmNotification;
-use Openpp\NotificationHubsRest\Notification\NotificationFactory;
-use Openpp\NotificationHubsRest\Notification\TemplateNotification;
+use Seis10\NotificationHubsRest\Notification\AppleNotification;
+use Seis10\NotificationHubsRest\Notification\GcmNotification;
+use Seis10\NotificationHubsRest\Notification\NotificationFactory;
+use Seis10\NotificationHubsRest\Notification\TemplateNotification;
 
 class NotificationFactoryTest extends \PHPUnit_Framework_TestCase
 {

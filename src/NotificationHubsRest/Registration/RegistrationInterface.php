@@ -2,7 +2,7 @@
 
 namespace Seis10\NotificationHubsRest\Registration;
 
-use Openpp\NotificationHubsRest\NotificationHub\ApiContentInterface;
+use Seis10\NotificationHubsRest\NotificationHub\ApiContentInterface;
 
 interface RegistrationInterface extends ApiContentInterface
 {

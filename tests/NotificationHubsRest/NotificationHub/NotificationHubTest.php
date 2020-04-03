@@ -2,9 +2,9 @@
 
 namespace Seis10\NotificationHubsRest\NotificationHub\Tests;
 
-use Openpp\NotificationHubsRest\Notification\GcmNotification;
-use Openpp\NotificationHubsRest\NotificationHub\NotificationHub;
-use Openpp\NotificationHubsRest\Registration\GcmRegistration;
+use Seis10\NotificationHubsRest\Notification\GcmNotification;
+use Seis10\NotificationHubsRest\NotificationHub\NotificationHub;
+use Seis10\NotificationHubsRest\Registration\GcmRegistration;
 
 class NotificationHubTest extends \PHPUnit_Framework_TestCase
 {

@@ -2,10 +2,10 @@
 
 namespace Seis10\NotificationHubsRest\Registration\Tests;
 
-use Openpp\NotificationHubsRest\Registration\AppleRegistration;
-use Openpp\NotificationHubsRest\Registration\GcmRegistration;
-use Openpp\NotificationHubsRest\Registration\RegistrationFactory;
-use Openpp\NotificationHubsRest\Registration\WindowsRegistration;
+use Seis10\NotificationHubsRest\Registration\AppleRegistration;
+use Seis10\NotificationHubsRest\Registration\GcmRegistration;
+use Seis10\NotificationHubsRest\Registration\RegistrationFactory;
+use Seis10\NotificationHubsRest\Registration\WindowsRegistration;
 
 class RegistrationFactoryTest extends \PHPUnit_Framework_TestCase
 {

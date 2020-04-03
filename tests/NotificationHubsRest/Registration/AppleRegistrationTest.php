@@ -2,7 +2,7 @@
 
 namespace Seis10\NotificationHubsRest\Registration\Tests;
 
-use Openpp\NotificationHubsRest\Registration\AppleRegistration;
+use Seis10\NotificationHubsRest\Registration\AppleRegistration;
 
 class AppleRegistrationTest extends \PHPUnit_Framework_TestCase
 {

@@ -2,7 +2,7 @@
 
 namespace Seis10\NotificationHubsRest\Notification\Tests;
 
-use Openpp\NotificationHubsRest\Notification\TemplateNotification;
+use Seis10\NotificationHubsRest\Notification\TemplateNotification;
 
 class TemplateNotificationTest extends \PHPUnit_Framework_TestCase
 {

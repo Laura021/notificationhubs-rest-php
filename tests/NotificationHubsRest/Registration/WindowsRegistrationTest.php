@@ -2,7 +2,7 @@
 
 namespace Seis10\NotificationHubsRest\Registration\Tests;
 
-use Openpp\NotificationHubsRest\Registration\WindowsRegistration;
+use Seis10\NotificationHubsRest\Registration\WindowsRegistration;
 
 class WindowsRegistrationTest extends \PHPUnit_Framework_TestCase
 {

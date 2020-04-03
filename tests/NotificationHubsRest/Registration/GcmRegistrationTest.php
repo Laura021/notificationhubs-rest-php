@@ -2,7 +2,7 @@
 
 namespace Seis10\NotificationHubsRest\Registration\Tests;
 
-use Openpp\NotificationHubsRest\Registration\GcmRegistration;
+use Seis10\NotificationHubsRest\Registration\GcmRegistration;
 
 class GcmRegistrationTest extends \PHPUnit_Framework_TestCase
 {

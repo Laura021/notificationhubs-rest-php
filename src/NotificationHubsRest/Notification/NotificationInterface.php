@@ -2,7 +2,7 @@
 
 namespace Seis10\NotificationHubsRest\Notification;
 
-use Openpp\NotificationHubsRest\NotificationHub\ApiContentInterface;
+use Seis10\NotificationHubsRest\NotificationHub\ApiContentInterface;
 
 interface NotificationInterface extends ApiContentInterface
 {

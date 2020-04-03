@@ -2,9 +2,9 @@
 
 namespace Seis10\NotificationHubsRest\NotificationHub;
 
-use Openpp\NotificationHubsRest\Notification\NotificationInterface;
-use Openpp\NotificationHubsRest\Registration\GcmRegistration;
-use Openpp\NotificationHubsRest\Registration\RegistrationInterface;
+use Seis10\NotificationHubsRest\Notification\NotificationInterface;
+use Seis10\NotificationHubsRest\Registration\GcmRegistration;
+use Seis10\NotificationHubsRest\Registration\RegistrationInterface;
 
 class NotificationHub
 {

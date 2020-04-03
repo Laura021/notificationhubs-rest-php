@@ -2,7 +2,7 @@
 
 namespace Seis10\NotificationHubsRest\Notification\Tests;
 
-use Openpp\NotificationHubsRest\Notification\GcmNotification;
+use Seis10\NotificationHubsRest\Notification\GcmNotification;
 
 class GcmNotificationTest extends \PHPUnit_Framework_TestCase
 {
