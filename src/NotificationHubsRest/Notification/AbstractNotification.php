@@ -1,6 +1,6 @@
 <?php
 
-namespace Openpp\NotificationHubsRest\Notification;
+namespace Seis10\NotificationHubsRest\Notification;
 
 abstract class AbstractNotification implements NotificationInterface
 {

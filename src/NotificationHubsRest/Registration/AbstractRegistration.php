@@ -1,6 +1,6 @@
 <?php
 
-namespace Openpp\NotificationHubsRest\Registration;
+namespace Seis10\NotificationHubsRest\Registration;
 
 abstract class AbstractRegistration implements RegistrationInterface
 {

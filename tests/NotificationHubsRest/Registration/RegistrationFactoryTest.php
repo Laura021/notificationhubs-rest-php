@@ -1,6 +1,6 @@
 <?php
 
-namespace Openpp\NotificationHubsRest\Registration\Tests;
+namespace Seis10\NotificationHubsRest\Registration\Tests;
 
 use Openpp\NotificationHubsRest\Registration\AppleRegistration;
 use Openpp\NotificationHubsRest\Registration\GcmRegistration;

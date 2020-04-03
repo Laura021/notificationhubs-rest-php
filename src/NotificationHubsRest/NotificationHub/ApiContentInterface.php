@@ -1,6 +1,6 @@
 <?php
 
-namespace Openpp\NotificationHubsRest\NotificationHub;
+namespace Seis10\NotificationHubsRest\NotificationHub;
 
 interface ApiContentInterface
 {

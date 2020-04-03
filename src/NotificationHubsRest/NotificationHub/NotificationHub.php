@@ -1,6 +1,6 @@
 <?php
 
-namespace Openpp\NotificationHubsRest\NotificationHub;
+namespace Seis10\NotificationHubsRest\NotificationHub;
 
 use Openpp\NotificationHubsRest\Notification\NotificationInterface;
 use Openpp\NotificationHubsRest\Registration\GcmRegistration;
