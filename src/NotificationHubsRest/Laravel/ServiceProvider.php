@@ -1,10 +1,10 @@
 <?php
 
-namespace Seis10\NotificationHubsRest\Laravel;
+namespace NotificationHubsRest\Laravel;
 
 use Illuminate\Support\ServiceProvider;
 
-class ServiceProvider extends ServiceProvider
+class ServiceProvider extends extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Register services.
