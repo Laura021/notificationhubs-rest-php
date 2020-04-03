@@ -22,12 +22,5 @@
         "psr-4": { 
             "Seis10\\NotificationHubsRest\\": "src/NotificationHubsRest" 
         }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "NotificationHubsRest\\Laravel\\ServiceProvider"
-            ]
-        }
     }
 }
