@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationHubsRest\Laravel;
+namespace Seis10\NotificationHubsRest\Laravel;
 
 use Illuminate\Support\ServiceProvider;
 
