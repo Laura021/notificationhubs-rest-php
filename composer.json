@@ -1,12 +1,15 @@
 {
-    "name": "openpp/notificationhubs-rest-php",
+    "name": "Laura021/notificationhubs-rest-php",
     "type": "library",
-    "description": "Microsoft Azure Notification Hub library for PHP",
+    "description": "Microsoft Azure Notification Hub library for PHP 2020",
     "keywords": ["push", "notificationhub", "azure"],
     "license": "MIT",
     "authors": [
         {
             "name": "webware,Inc."
+        },
+        {
+            "name": "Laura021"
         }
     ],
     "require": {
@@ -16,6 +19,15 @@
         "phpunit/phpunit": "^5.7"
     },
     "autoload": {
-        "psr-4": { "Openpp\\NotificationHubsRest\\": "src/NotificationHubsRest" }
+        "psr-4": { 
+            "Seis10\\NotificationHubsRest\\": "src/NotificationHubsRest" 
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NotificationHubsRest\\Laravel\\ServiceProvider"
+            ]
+        }
     }
 }
