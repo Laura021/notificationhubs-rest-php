@@ -8,7 +8,7 @@ use Seis10\NotificationHubsRest\Registration\RegistrationInterface;
 
 class NotificationHub
 {
-    const API_VERSION = '?api-version=2013-08';
+    const API_VERSION = '?api-version=2015-01';
 
     const METHOD_GET = 'GET';
     const METHOD_POST = 'POST';
