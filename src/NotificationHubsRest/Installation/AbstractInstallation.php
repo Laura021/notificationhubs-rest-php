@@ -109,11 +109,6 @@ abstract class AbstractInstallation implements InstallationInterface {
     public function buildUri($endpoint, $hubPath)
     {
         $uri = $endpoint.$hubPath.'/installations/';
-
-        /*if ($this->registrationId) {
-            $uri .= $this->registrationId;
-        }*/
-
         return $uri;
     }
 
@@ -134,10 +129,6 @@ abstract class AbstractInstallation implements InstallationInterface {
             'Content-Type: '.$this->getContentType(),
             'x-ms-version: '.'2015-01',
         ];
-
-        /*if ($this->eTag) {
-            $headers[] = 'If-Match: '.$this->eTag;
-        }*/
 
         return $headers;
     }
@@ -164,8 +155,6 @@ abstract class AbstractInstallation implements InstallationInterface {
 
         return json_encode($data);
     }
-
-
 
     /**
      * Returns the atom payload for the registration request.
