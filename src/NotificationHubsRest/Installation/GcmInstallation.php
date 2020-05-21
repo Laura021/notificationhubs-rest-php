@@ -12,8 +12,7 @@ class GcmInstallation extends AbstractInstallation
 
     public function __construct($connectionString, $hubPath) {
         Log::info('Seis10\NotificationHubsRest\Installation\GcmInstallation::__construct');
-        parent::__construct($connectionString, $hubPath);
-        echo 'Child __construct<br/>';
+        parent::__construct($connectionString, $hubPath);        
     }
     /**
      * Create Registration.
@@ -25,13 +24,11 @@ class GcmInstallation extends AbstractInstallation
      * @return mixed
      */
     //public function createNewInstallation()
-    public function createNewInstallation()
+    public function createNewInstallation($data)
     {
-        //parent::__construct($connectionString, $hubPath);
-
         Log::info('Seis10\NotificationHubsRest\Installation\GcmInstallation::createInstallation');
 
-        $uri = $this->buildUri($this->endpoint, $this->hubPath).'987654321'.self::API_VERSION;
+        $uri = $this->buildUri($this->endpoint, $this->hubPath).$data['installationId'].self::API_VERSION;
         
         Log::info("uri");
         Log::info($uri);
@@ -40,15 +37,21 @@ class GcmInstallation extends AbstractInstallation
        
         Log::info("token"); 
         Log::info($this->token);
+
+        $this->setPayload($data);
         
         $headers = array_merge(['Authorization: '.$this->token], $this->getHeaders());
+
+        Log::info("payload"); 
+        Log::info($this->getPayload());
 
         $response = $this->request(self::METHOD_PUT, $uri, $headers, $this->getPayload());
         
         Log::info('response');
         Log::info($response);
         
-        return $installation->scrapeResponse($response);
+        return true;
+        //return $installation->scrapeResponse($response);
     }
 
     /**

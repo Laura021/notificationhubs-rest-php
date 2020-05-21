@@ -29,6 +29,13 @@ interface InstallationInterface
     public function buildUri($endpoint, $hubPath);
 
     /**
+     * Create the API request payload.
+     *
+     * @return void
+     */    
+    public function setPayload($data);
+
+    /**
      * Returns the API request payload.
      *
      * @return string

@@ -39,6 +39,11 @@ abstract class AbstractInstallation implements InstallationInterface {
     protected  $sasKeyValue;
 
     /**
+     * @var array 
+     */
+    protected  $payload;
+
+    /**
      * Initializes a new NotificationHub.
      *
      * @param string $connectionString
@@ -137,6 +142,31 @@ abstract class AbstractInstallation implements InstallationInterface {
         return $headers;
     }
 
+
+    /**
+     * Returns the atom payload for the registration request.
+     *
+     * @throws \RuntimeException
+     *
+     * @return void
+     */
+    public function setPayload($data)
+    {
+        if (!$this->token) {
+            throw new \RuntimeException('Token is mandatory.');
+        }
+
+        $this->payload = array();
+        $this->payload['installationId'] 	= $data['installationId'];
+        $this->payload['tags'] 				= $data['tag'];
+        $this->payload['platform'] 			= $data['platform'];
+        $this->payload['pushChannel'] 		= $data['token'];
+
+        return json_encode($data);
+    }
+
+
+
     /**
      * Returns the atom payload for the registration request.
      *
@@ -150,13 +180,7 @@ abstract class AbstractInstallation implements InstallationInterface {
             throw new \RuntimeException('Token is mandatory.');
         }
 
-		$data =  array();
-		$data['installationId'] = "987654321";
-		$data['tags'] 			= array('distribuidor');
-		$data['platform'] 		= 'GCM';
-		$data['pushChannel']	= "device-token";
-
-        return json_encode($data);
+        return json_encode($this->payload);
     }
 
     /**
