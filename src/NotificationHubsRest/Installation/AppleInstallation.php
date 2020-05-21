@@ -2,6 +2,10 @@
 
 namespace Seis10\NotificationHubsRest\Installation;
 
+use Seis10\NotificationHubsRest\Notification\InstallationInterface;
+
+use Illuminate\Support\Facades\Log;
+
 class AppleInstallation extends AbstractInstallation
 {
     protected $expiry;
