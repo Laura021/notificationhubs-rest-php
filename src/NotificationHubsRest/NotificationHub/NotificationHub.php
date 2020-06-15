@@ -2,6 +2,8 @@
 
 namespace Seis10\NotificationHubsRest\NotificationHub;
 
+use Illuminate\Support\Facades\Log;
+
 use Seis10\NotificationHubsRest\Notification\NotificationInterface;
 use Seis10\NotificationHubsRest\Registration\GcmRegistration;
 use Seis10\NotificationHubsRest\Registration\RegistrationInterface;
@@ -54,10 +56,17 @@ class NotificationHub
      */
     public function sendNotification(NotificationInterface $notification)
     {
+        //Log::info('VENDOR: sendNotification');
         $uri = $notification->buildUri($this->endpoint, $this->hubPath).self::API_VERSION;
 
         $token = $this->generateSasToken($uri);
         $headers = array_merge(['Authorization: '.$token], $notification->getHeaders());
+
+        //Log::info('HEADER');
+        //Log::info($notification->getHeaders());
+
+        //Log::info('PAYLOAD');
+        //Log::info($notification->getPayload());
 
         $this->request(self::METHOD_POST, $uri, $headers, $notification->getPayload());
     }
@@ -73,6 +82,8 @@ class NotificationHub
      */
     public function createRegistration(RegistrationInterface $registration)
     {
+        //Log::info('NotificationHUB == Registration Class: '.get_class($registration));
+
         if ($registration->getRegistrationId() || $registration->getETag()) {
             throw new \RuntimeException('Registration ID and ETag must be empty.');
         }

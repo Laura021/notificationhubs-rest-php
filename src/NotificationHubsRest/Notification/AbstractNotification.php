@@ -2,6 +2,7 @@
 
 namespace Seis10\NotificationHubsRest\Notification;
 
+
 abstract class AbstractNotification implements NotificationInterface
 {
     const SCHEDULE_TIME_FORMAT = 'Y-m-d\TH:i:s';

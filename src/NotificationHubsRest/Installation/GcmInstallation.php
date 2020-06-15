@@ -26,34 +26,48 @@ class GcmInstallation extends AbstractInstallation
      */
     public function createNewInstallation($data)
     {
-        Log::info('Seis10\NotificationHubsRest\Installation\GcmInstallation::createInstallation');
+        //Log::info('Seis10\NotificationHubsRest\Installation\GcmInstallation::createInstallation');
 
         $uri = $this->buildUri($this->endpoint, $this->hubPath).$data['installationId'].self::API_VERSION;
         
-        /*Log::info("uri");
-        Log::info($uri);*/
+        //Log::info("uri");
+        //Log::info($uri);
         
         $this->token = $this->generateSasToken($uri);
        
-        /*Log::info("token"); 
-        Log::info($this->token);*/
+        //Log::info("token"); 
+        //Log::info($this->token);
 
         $this->setPayload($data);
         
         $headers = array_merge(['Authorization: '.$this->token], $this->getHeaders());
 
-        Log::info("payload"); 
-        Log::info($this->getPayload());
+        //Log::info("payload"); 
+        //Log::info($this->getPayload());
 
         $response = $this->request(self::METHOD_PUT, $uri, $headers, $this->getPayload());
         
-        /*Log::info('response');
-        Log::info($response);*/
+       // Log::info('response');
+       // Log::info($response);
         
         return true;
         //return $installation->scrapeResponse($response);
     }
 
+
+    public function readInstallation($data){
+        //Log::info('Seis10\NotificationHubsRest\Installation\Gcmnstallation::readInstallation');
+
+        $uri = $this->buildUri($this->endpoint, $this->hubPath).$data['installationId'].self::API_VERSION;
+        $this->token = $this->generateSasToken($uri);
+        
+        $headers = array_merge(['Authorization: '.$this->token], $this->getHeaders());
+        $response = $this->request(self::METHOD_GET, $uri, $headers, $this->getPayload());
+        
+        //Log::info('response');
+        //Log::info($response);
+        return true;
+    }
     /**
      * Send the request to API.
      *

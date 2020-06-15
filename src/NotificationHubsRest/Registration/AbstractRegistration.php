@@ -2,6 +2,8 @@
 
 namespace Seis10\NotificationHubsRest\Registration;
 
+use Illuminate\Support\Facades\Log;
+
 abstract class AbstractRegistration implements RegistrationInterface
 {
     /**
@@ -206,15 +208,23 @@ abstract class AbstractRegistration implements RegistrationInterface
      */
     public function getPayload()
     {
+        //Log::info('GetPayload');
+        
         if (!$this->token) {
             throw new \RuntimeException('Token is mandatory.');
         }
 
         $descriptionNode = $this->appendDescriptionNode();
+
+        //Log::info('descriptionNode type: '.gettype($descriptionNode));
+
+
         $this->appendTagNode($descriptionNode);
         $this->appendTokenNode($descriptionNode);
         $this->appendTemplateNode($descriptionNode);
         $this->appendAdditionalNode($descriptionNode);
+
+        //Log::info(json_encode($descriptionNode));
 
         $this->dom->formatOutput = true;
 
