@@ -56,9 +56,10 @@ class AppleInstallation extends AbstractInstallation
     }
 
     public function readInstallation($data){
-        //Log::info('Seis10\NotificationHubsRest\Installation\AppleInstallation::readInstallation');
+        Log::info('Seis10\NotificationHubsRest\Installation\AppleIstallation::readInstallation');
 
         $uri = $this->buildUri($this->endpoint, $this->hubPath).$data['installationId'].self::API_VERSION;
+
         $this->token = $this->generateSasToken($uri);
         
         $headers = array_merge(['Authorization: '.$this->token], $this->getHeaders());
@@ -66,9 +67,26 @@ class AppleInstallation extends AbstractInstallation
         
         //Log::info('response');
         //Log::info($response);
+        
         return true;
     }
 
+    public function updateInstallation($data){
+        Log::info('Seis10\NotificationHubsRest\Installation\AppleInstallation::updateInstallation');
+
+        $uri = $this->buildUri($this->endpoint, $this->hubPath).$data['installationId'].self::API_VERSION;
+        $this->token = $this->generateSasToken($uri);
+
+        unset($data['installationId']);
+        $payload    = json_encode(array($data));
+
+        $headers    = array_merge(['Authorization: '.$this->token], $this->getHeaders());
+        $response   = $this->request(self::METHOD_PATCH, $uri, $headers, $payload);
+
+        //Log::info('response');
+        //Log::info($response);
+        return true;
+    }
     /**
      * Send the request to API.
      *
