@@ -56,7 +56,7 @@ class NotificationHub
      */
     public function sendNotification(NotificationInterface $notification)
     {
-        //Log::info('VENDOR: sendNotification');
+        Log::info('VENDOR: sendNotification');
         $uri = $notification->buildUri($this->endpoint, $this->hubPath).self::API_VERSION;
 
         $token = $this->generateSasToken($uri);
@@ -70,6 +70,35 @@ class NotificationHub
 
         $this->request(self::METHOD_POST, $uri, $headers, $notification->getPayload());
     }
+
+
+    /**
+     * Send a  DIRECT Notification.
+     *
+     * @param NotificationInterface $notification
+     */
+    public function sendDirectNotification(NotificationInterface $notification, $handle)
+    {
+        Log::info('VENDOR: sendDirectNotification');
+
+        //https://{namespace}.servicebus.windows.net/{NotificationHub}/messages/?direct&api-version=2015-04
+
+
+        $uri = $notification->buildUri($this->endpoint, $this->hubPath).self::API_VERSION.'&direct';
+
+        $token = $this->generateSasToken($uri);
+        $preheaders = array_merge(['ServiceBusNotification-DeviceHandle: '.$handle], $notification->getHeaders());
+        $headers = array_merge(['Authorization: '.$token], $preheaders);
+
+        Log::info('HEADERS');
+        Log::info(json_encode($headers));
+
+        Log::info('PAYLOAD');
+        Log::info($notification->getPayload());
+
+        $this->request(self::METHOD_POST, $uri, $headers, $notification->getPayload());
+    }
+
 
     /**
      * Create Registration.
